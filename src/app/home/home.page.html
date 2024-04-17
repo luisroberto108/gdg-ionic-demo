@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-title>
+      Personajes de Rick & Morty
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-input label="pagina" type="number" [value]="pagina" ></ion-input>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  @for (personaje of personajes; track 'id') {
+    <ion-item>
+      <ion-avatar slot="start">
+        <img [src]="personaje.image" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{personaje.name}} ({{personaje.gender}})</h2>
+        <h3>{{personaje.origin.name}} - {{personaje.location.name}}</h3>
+      </ion-label>
+      <ion-chip slot="end">{{personaje.species}}</ion-chip>
+    </ion-item>
+  }
+</ion-content>
+
+<ion-footer>
+  <span>Personajes</span>
+</ion-footer>
