@@ -5,8 +5,13 @@
       Personajes de Rick & Morty
     </ion-title>
   </ion-toolbar>
-  <ion-toolbar>
-    <ion-input label="pagina" type="number" [value]="pagina" ></ion-input>
+  <ion-toolbar color="primary">
+    <ion-input
+      label="Pagina"
+      type="number"
+      [value]="pagina"
+      (ionInput)="cargarPorPagina($event)"
+    ></ion-input>
   </ion-toolbar>
 </ion-header>
 
